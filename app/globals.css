@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #000;
+}
+
+@font-face {
+  font-family: "PyeongChangePeace";
+  src: url("/font/PyeongChangPeace-Light.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "PyeongChangePeace";
+  src: url("/font/PyeongChangPeace-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NanumGothic";
+  src: url("/font/NanumGothicLight.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "NanumGothic";
+  src: url("/font/NanumGothic.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "NanumGothic";
+  src: url("/font/NanumGothicBold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NanumGothic";
+  src: url("/font/NanumGothicExtraBold.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "AppleSDGothic";
+  src: url("/font/AppleSDGothicNeoL.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "AppleSDGothic";
+  src: url("/font/AppleSDGothicNeoR.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "AppleSDGothic";
+  src: url("/font/AppleSDGothicNeoM.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AppleSDGothic";
+  src: url("/font/AppleSDGothicNeoB.ttf");
+  font-weight: bold;
+}
+
+.skeleton-content::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  animation: loading 1.8s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    background-color: rgba(165, 165, 165, 0.2);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.5);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+#spin {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .input {
+    width: 240px !important;
+  }
+
+  .username {
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    word-break: break-all !important;
+    width: 200px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .info-container {
+    flex-direction: column !important;
+  }
+
+  .info {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+}
