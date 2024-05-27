@@ -20,23 +20,28 @@ function SearchBar() {
       if (!inputRef.current.value) return
 
       const startPoint = inputRef.current.value.indexOf("#")
-      const endPoint = inputRef.current.value.length
 
-      const gameName = inputRef.current.value.slice(0, startPoint)
-      const tagLine = inputRef.current.value.slice(startPoint + 1, endPoint)
+      if (startPoint !== -1) {
+        const endPoint = inputRef.current.value.length
 
-      const response = await fetch(`/api/account/${gameName}/${tagLine}`, {
-        method: "GET"
-      })
+        const gameName = inputRef.current.value.slice(0, startPoint)
+        const tagLine = inputRef.current.value.slice(startPoint + 1, endPoint)
 
-      const summoner = await response.json()
+        const response = await fetch(`/api/account/${gameName}/${tagLine}`, {
+          method: "GET"
+        })
 
-      if (summoner?.data.gameName) {
-        dispatch(setUser({ ...summoner?.data }))
-        inputRef.current.value = ""
-        router.push(
-          `/summoner/${summoner?.data.puuid}/${summoner?.data.gameName}/${summoner?.data.tagLine}`
-        )
+        const summoner = await response.json()
+
+        if (summoner?.data.gameName) {
+          dispatch(setUser({ ...summoner?.data }))
+          inputRef.current.value = ""
+          router.push(
+            `/summoner/${summoner?.data.puuid}/${summoner?.data.gameName}/${summoner?.data.tagLine}`
+          )
+        }
+      } else {
+        return alert("#태그, 알맞게 했는지 확인해주세요.")
       }
     }
   }
