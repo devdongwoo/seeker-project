@@ -1,7 +1,7 @@
 # Seeker (toy project)
 
 - 배포주소(vercel)<br/>
-  https://seeker-project.vercel.app/
+  https://seeker-project.vercel.app/<br/>
   ※ new api key 받아야해서 새롭게 신청함 (2024.05.24)<br/>
   ※ riot api 변경때문에 전에 있던것을 유지보수하여 변경함 (2024.05.28)<br/>
 - 개발기간<br/>
