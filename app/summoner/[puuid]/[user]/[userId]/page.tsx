@@ -2,7 +2,6 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import styled from "@emotion/styled"
-import { getMatcheData } from "../../../../axios/asia"
 import { TIER_IMAGE } from "@/app/img"
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks"
 import { Skeleton } from "@/app/components/units/skeleton/skeleton"
