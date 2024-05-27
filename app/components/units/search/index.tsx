@@ -65,7 +65,10 @@ function SearchBar() {
           className="input"
           placeholder="이름#태그검색"
           onKeyDown={(e) => {
-            if (e.keyCode === 13) searchHandler()
+            if (e.keyCode === 13) {
+              e.preventDefault()
+              searchHandler()
+            }
           }}
           ref={inputRef}
         />
